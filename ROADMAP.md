@@ -1,6 +1,7 @@
 # Copper Anvil roadmap
 
 ## Done
+- 1.0.1: recipe unlock advancement so the recipe shows in the recipe book (unit test guards every recipe).
 - Blocks + block items `copper_anvil`, `chipped_copper_anvil`, `damaged_copper_anvil` (`CopperAnvilBlock`
   extends vanilla `AnvilBlock`, properties copied from the matching vanilla anvil).
 - Wear: 24% chance per use (`AnvilMenuMixin` swaps the 0.12 constant only for copper anvils);
