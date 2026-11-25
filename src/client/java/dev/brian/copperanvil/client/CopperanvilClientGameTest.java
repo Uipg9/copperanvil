@@ -2,6 +2,7 @@ package dev.brian.copperanvil.client;
 
 import dev.brian.copperanvil.Copperanvil;
 import dev.brian.copperanvil.ModBlocks;
+import com.mojang.blaze3d.platform.InputConstants;
 import net.fabricmc.fabric.api.client.gametest.v1.FabricClientGameTest;
 import net.fabricmc.fabric.api.client.gametest.v1.context.ClientGameTestContext;
 import net.fabricmc.fabric.api.client.gametest.v1.context.TestSingleplayerContext;
@@ -70,14 +71,24 @@ public class CopperanvilClientGameTest implements FabricClientGameTest {
 			context.getInput().pressKey(options -> options.keyUse);
 			context.waitForScreen(AnvilScreen.class);
 
-			// Rename a diamond sword through the anvil menu.
-			String rename = world.getServer().computeOnServer(server -> {
+			// Put a diamond sword in the input slot, then rename it by typing into the screen's name box.
+			String setup = world.getServer().computeOnServer(server -> {
 				ServerPlayer player = server.getPlayerList().getPlayers().getFirst();
 				if (!(player.containerMenu instanceof AnvilMenu menu)) return "server menu is " + player.containerMenu;
 				if (!menu.stillValid(player)) return "menu not valid for copper anvil";
 				menu.getSlot(AnvilMenu.INPUT_SLOT).set(new ItemStack(Items.DIAMOND_SWORD));
-				menu.setItemName("Copper Blade");
-				menu.createResult();
+				return null;
+			});
+			expect(setup == null, "setup: " + setup);
+			context.waitTicks(10);
+			for (int i = 0; i < "Diamond Sword".length(); i++) {
+				context.getInput().pressKey(InputConstants.KEY_BACKSPACE);
+			}
+			context.getInput().typeChars("Copper Blade");
+			context.waitTicks(10);
+			String rename = world.getServer().computeOnServer(server -> {
+				ServerPlayer player = server.getPlayerList().getPlayers().getFirst();
+				AnvilMenu menu = (AnvilMenu) player.containerMenu;
 				ItemStack result = menu.getSlot(AnvilMenu.RESULT_SLOT).getItem();
 				if (!result.is(Items.DIAMOND_SWORD)) return "result was " + result;
 				if (!"Copper Blade".equals(result.getHoverName().getString())) return "name was " + result.getHoverName().getString();
