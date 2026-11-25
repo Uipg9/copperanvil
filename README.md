@@ -1,3 +1,5 @@
+<p align="center"><img src="src/main/resources/assets/copperanvil/icon.png" width="128" alt="icon"></p>
+
 # Copper Anvil
 
 A copper anvil that works exactly like the vanilla anvil (repair, combine, rename, same XP costs and
