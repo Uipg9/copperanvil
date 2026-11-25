@@ -1,0 +1,15 @@
+{
+	"required": true,
+	"package": "dev.brian.copperanvil.mixin",
+	"compatibilityLevel": "JAVA_25",
+	"mixins": [
+		"AnvilBlockMixin",
+		"AnvilMenuMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	},
+	"overwrites": {
+		"requireAnnotations": true
+	}
+}

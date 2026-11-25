@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "copperanvil:copper_anvil",
+    "copperanvil:chipped_copper_anvil",
+    "copperanvil:damaged_copper_anvil"
+  ]
+}

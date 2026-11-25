@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=east": { "model": "copperanvil:block/chipped_copper_anvil", "y": 270 },
+    "facing=north": { "model": "copperanvil:block/chipped_copper_anvil", "y": 180 },
+    "facing=south": { "model": "copperanvil:block/chipped_copper_anvil" },
+    "facing=west": { "model": "copperanvil:block/chipped_copper_anvil", "y": 90 }
+  }
+}

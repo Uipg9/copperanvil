@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "condition": { "type": "minecraft:survives_explosion" },
+      "entries": [ { "type": "minecraft:item", "name": "copperanvil:chipped_copper_anvil" } ],
+      "rolls": 1
+    }
+  ],
+  "random_sequence": "copperanvil:blocks/chipped_copper_anvil"
+}

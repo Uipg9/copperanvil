@@ -1,0 +1,30 @@
+{
+	"schemaVersion": 1,
+	"id": "copperanvil",
+	"version": "${version}",
+	"name": "Copper Anvil",
+	"description": "A cheaper copper anvil that works exactly like the vanilla anvil but wears out twice as fast.",
+	"authors": [
+		"Uipg9"
+	],
+	"license": "CC0-1.0",
+	"icon": "assets/copperanvil/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"dev.brian.copperanvil.Copperanvil"
+		],
+		"fabric-client-gametest": [
+			"dev.brian.copperanvil.client.CopperanvilClientGameTest"
+		]
+	},
+	"mixins": [
+		"copperanvil.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.20.1",
+		"minecraft": "~26.3",
+		"java": ">=25",
+		"fabric-api": "*"
+	}
+}

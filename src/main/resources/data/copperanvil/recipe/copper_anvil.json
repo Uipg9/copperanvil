@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "C": "minecraft:copper_block",
+    "c": "minecraft:copper_ingot"
+  },
+  "pattern": [
+    "CCC",
+    " c ",
+    "ccc"
+  ],
+  "result": {
+    "id": "copperanvil:copper_anvil"
+  }
+}
